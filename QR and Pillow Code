@@ -1,0 +1,21 @@
+# Import the modules
+import qrcode
+from qrcode.image.pure import PymagingImage
+
+# Define the data for the QR code
+data = "Hello, world!"
+
+# Create the QR code object
+qr = qrcode.QRCode()
+
+# Add the data to the QR code object
+qr.add_data(data)
+
+# Make the QR code
+qr.make()
+
+# Create an image from the QR code object
+img = qr.make_image(image_factory=PymagingImage)
+
+# Save the image as PNG file
+img.save("hello.png")
